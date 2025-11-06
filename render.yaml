@@ -1,0 +1,14 @@
+# Render.com deployment config
+services:
+  - type: web
+    name: jaremis-character
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements_character.txt
+    startCommand: gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:$PORT character_server:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: SECRET_KEY
+        generateValue: true

@@ -1,0 +1,8 @@
+# Character Display Server - Lightweight for Render.com Free Tier
+# Total memory usage: ~50MB
+
+Flask==3.0.0
+flask-socketio==5.3.5
+python-socketio==5.10.0
+eventlet==0.33.3
+gunicorn==21.2.0
